@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#141414">
+  <title>Egg Toggle — Animated CSS Switch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="demo">
+      <h1>Egg<br>Toggle</h1>
+      <div class="switch-wrap">
+        <button class="switch" id="eggSwitch" type="button" role="switch" aria-checked="false" aria-label="Toggle egg switch">
+          <span class="switch-background"></span>
+          <svg class="egg" viewBox="0 0 100 100" role="img" aria-label="Fried egg">
+            <defs>
+              <filter id="yolk-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2.5"/>
+              </filter>
+            </defs>
+            <g class="egg-mainGroup">
+              <ellipse class="yolk-shadow" cx="50" cy="50" rx="21" ry="23"/>
+              <path class="egg-white" d="M50 8 C62 7 69 18 73 29 C80 34 91 39 91 51 C92 65 82 74 71 78 C62 89 49 94 37 88 C25 85 18 76 17 64 C7 55 9 42 17 33 C22 20 35 11 50 8Z"/>
+              <circle class="yolk" cx="50" cy="49" r="16"/>
+              <circle class="yolk-shine" cx="44" cy="43" r="4"/>
+            </g>
+          </svg>
+        </button>
+        <p class="switch-state" id="switchState" aria-live="polite">OFF</p>
+      </div>
+    </section>
+
+    <section class="code-board" aria-label="Implementation code preview">
+      <article class="code-window html-code">
+        <div class="window-bar"><i></i><i></i><i></i><span>index.html</span></div>
+        <pre><code><tag>&lt;button</tag> class=<str>"switch"</str><tag>&gt;</tag>
+  <tag>&lt;div</tag> class=<str>"switch__background"</str><tag>&gt;&lt;/div&gt;</tag>
+  <tag>&lt;svg</tag> class=<str>"egg"</str><tag>&gt;</tag>
+    <tag>&lt;g</tag> class=<str>"egg__mainGroup"</str><tag>&gt;</tag>
+      <tag>&lt;ellipse</tag> class=<str>"egg__yolkShadow"</str><tag>/&gt;</tag>
+      <tag>&lt;path</tag> class=<str>"egg__white"</str><tag>/&gt;</tag>
+    <tag>&lt;/g&gt;</tag>
+  <tag>&lt;/svg&gt;</tag>
+<tag>&lt;/button&gt;</tag></code></pre>
+      </article>
+
+      <div class="demo-title">Egg<br>Toggle</div>
+
+      <article class="code-window css-code-left">
+        <div class="window-bar"><i></i><i></i><i></i><span>style.css</span></div>
+        <pre><code><selector>*, *::before, *::after</selector> {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+<selector>:root</selector> {
+  font-size: 62.5%;
+}
+
+<selector>body</selector> {
+  background: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+<selector>.switch</selector> {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 100rem;
+}</code></pre>
+        <b class="number">1</b>
+      </article>
+
+      <article class="code-window css-code-right">
+        <div class="window-bar"><i></i><i></i><i></i><span>style.css</span></div>
+        <pre><code><selector>.switch__background</selector> {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #3b3364;
+  border-radius: 100rem;
+  width: 20rem;
+  height: 100%;
+  z-index: -1;
+}
+
+<selector>.egg</selector> {
+  height: 14.4rem;
+  width: 32.4rem;
+}
+
+<selector>.egg__mainGroup</selector> {
+  transform: translate(2.2rem, calc(2.2rem + 1.2px));
+}
+
+<selector>.egg__white.-hidden</selector> {
+  visibility: hidden;
+}</code></pre>
+        <b class="number">2</b>
+      </article>
+      <div class="curved-arrow" aria-hidden="true">↗</div>
+      <p class="code-note">JavaScript Code<br>In Codepen</p>
+    </section>
+
+    <footer>
+      <div class="creator-avatar">CS</div>
+      <div class="creator"><b>@coding.stella</b><small>@codewith_random</small></div>
+      <span class="footer-label">HTML · CSS · JS</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
